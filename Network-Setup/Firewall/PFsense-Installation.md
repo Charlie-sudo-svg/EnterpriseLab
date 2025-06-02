@@ -9,3 +9,10 @@ When I start up the VM I go through the options and add bridged adapter as the W
 I was able to access it from another computer on the corporate LAN network.
 
 ![Screenshot 2025-06-01 194752](https://github.com/user-attachments/assets/376afe1c-35c2-4ba4-b71e-36f2936ecd48)
+
+
+## Adding Interfaces
+
+The next step was to add OPT1 and OPT2 as interfaces in PFsense to segment the networks. I first added OPT1 as an interface on the IP 192.168.50.1/24 this will be our SCADA subnet. 
+
+*show screenshot of opt1
