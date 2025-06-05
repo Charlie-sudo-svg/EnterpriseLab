@@ -25,3 +25,11 @@ Configuring the shared folder was easy, I downloaded Splunk 9.4.2 onto my host l
 Once the shared folder was accessed, I ran `sudo dpkg -i splunk-9.4.2-e9664af3d956-linux-amd64.deb` and waited a few minutes for the file to unpack.
 
 From here, the file will be accessed through /opt/splunk where the rest of the setup will occur.
+
+I went to /opt/splunk/bin and ran the command `sudo ./splunk start --accept-license`. This started the Splunk server and I also ran `sudo ./splunk enable boot-start` to have the splunk server start everytime the Ubuntu server is booted online. 
+
+Now to check if the Splunk is online and working I go to 192.168.30.2:8000 in my browser and I login using the creds I provided at startup which are itguy/administrator and it works!
+
+![image](https://github.com/user-attachments/assets/f1dd4639-ef85-49bd-926e-36b822f1fe86)
+
+Now that Splunk is online, I can start to set up other machines and use Sysmon and the Splunk forwarder to help forward log telemetry to Splunk to analyze.
