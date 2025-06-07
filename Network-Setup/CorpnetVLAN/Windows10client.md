@@ -28,3 +28,20 @@ I downloaded the 64 bit version of Splunk Forwarder version 9.4.3 onto the Windo
 
 I used the IP of the Splunk Server I configured earlier as well as port 9997. 
 
+The next step in this process is to go to the Splunk instance located at 192.168.30.2:8000 and configure a few things. I configured a new recieving port on port 9997 by going to Settings -> Forwarding and Recieving
+
+
+![Screenshot 2025-06-07 155402](https://github.com/user-attachments/assets/c121e462-9b79-4612-966a-d41670e07149)
+
+Then, I created a new index called "Telemetry" that the Splunk will forward the data to. 
+
+![image](https://github.com/user-attachments/assets/f68a6fc4-5b5b-417f-b352-bbe693a8a89f)
+
+Now, I actually need to tell Splunk how to forward the data. This can be done by providing a inputs.conf file inside Windows.
+
+![Screenshot 2025-06-07 160717](https://github.com/user-attachments/assets/30fc8a5b-c1a2-411c-a419-e5ac9d5f2c0f)
+
+After providing the file, resetting the Splunk service is imperitive for this to work. I went to Services, then I stopped and started the Universal Splunk Forwarder service.
+
+![Screenshot 2025-06-07 160744](https://github.com/user-attachments/assets/061393bc-e3b7-4595-b08b-7675643d3d7f)
+
