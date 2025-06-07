@@ -45,3 +45,7 @@ After providing the file, resetting the Splunk service is imperitive for this to
 
 ![Screenshot 2025-06-07 160744](https://github.com/user-attachments/assets/061393bc-e3b7-4595-b08b-7675643d3d7f)
 
+After going to Splunk we can see below that the logs are finally getting ingested into Splunk!
+
+![Screenshot 2025-06-07 163935](https://github.com/user-attachments/assets/b9e93aea-0cd8-4ad4-98e4-b3af87305f14)
+
