@@ -57,3 +57,18 @@ The last thing to do was very similar to what I had to do with the Splunk Server
 ![Screenshot 2025-06-09 222424](https://github.com/user-attachments/assets/43d84d48-d891-48b5-86b1-0defb1371295)
 
 ![Screenshot 2025-06-09 222306](https://github.com/user-attachments/assets/5f7d1607-4210-4f45-a37d-83f42bbdc236)
+
+
+## Setting up Splunk Forwarder
+
+I ran `wget -O splunkforwarder-9.4.3-237ebbd22314-linux-amd64.deb "https://download.splunk.com/products/universalforwarder/releases/9.4.3/linux/splunkforwarder-9.4.3-237ebbd22314-linux-amd64.deb"` to download the Splunk Forwarder for configuration on Ubuntu.
+
+The rest of the setup was fairly simple.
+
+I ran `sudo dpkg -i splunkforwarder-9.4.3-a7f645dd1f0f-linux-2.6-amd64.deb` to unpack the file then went into /opt/splunkforwarder/bin/splunk and ran `sudo splunk start --accept-license`. This started the Splunk Forwarder on my machine.
+
+After that, its time to configure the actual forwarding of the logs itself. This is much easier in Ubuntu rather than Windows because in Ubuntu I just had to run `sudo splunk add forward-server 192.168.30.2:9997 -auth itguy:administrator`. After I ran this command, its time to specify what logs we want to send to Splunk which are /var/logs. `sudo /splunk add monitor /var/log -auth itguy:administrator`.
+
+After a quick restart of the forwarder, Splunk is finally recieving telemetry and is now showing it on the Splunk GUI.
+
+![Screenshot 2025-06-11 094950](https://github.com/user-attachments/assets/eecf3435-c0b5-4115-a33b-ad438fa2824c)
